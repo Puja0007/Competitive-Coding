@@ -5,7 +5,7 @@ function binarySearch(arr,n){
     let midVal = Math.floor(min +(max-min)/2);
    
     let currentVal = arr[midVal];
-    if(n>currentVal){
+    if(n >currentVal){
         min = midVal+1;
        
     } 
@@ -20,5 +20,5 @@ function binarySearch(arr,n){
  return -1;
 }
 
-let arr = [1,2,3,4,5,6];
+let arr = [1,2,3,4,5,11];
 console.log(binarySearch(arr,11));
