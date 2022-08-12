@@ -4,12 +4,14 @@ function peakElement(arr) {
     let n = arr.length;
         while(first <= last){
             let mid = Math.floor(first +(last-first)/2);
+            let next = (mid+1) % n;
+            let prev = (mid-1+n)% n;
            // console.log(mid);
             if(mid>0 && mid<n-1){
-                if(arr[mid-1]<arr[mid] && arr[mid+1]<arr[mid]){
+                if(arr[prev]<arr[mid] && arr[next]<arr[mid]){
                     return mid;
                 }
-                else if(arr[mid-1]>arr[mid]){
+                else if(arr[prev]>arr[mid]){
                     last= mid-1;
                     
                 }
@@ -38,5 +40,5 @@ function peakElement(arr) {
         return -1;
     }
     
-    let array = [1,2,3,1];
+    let array = [1,3,8,12,4,2];
     console.log(peakElement(array));
